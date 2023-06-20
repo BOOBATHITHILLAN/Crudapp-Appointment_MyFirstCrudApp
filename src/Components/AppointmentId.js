@@ -28,6 +28,7 @@ function AppointmentId({ create }) {
                 </tr>
               )
             }
+            return false
           })}
         </tbody>
       </table>
