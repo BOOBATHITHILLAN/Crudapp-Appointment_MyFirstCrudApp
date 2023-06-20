@@ -9,7 +9,7 @@ function AppointmentId({ create }) {
     <div className="table-responsive">
       <table className="table">
         <thead>
-          <tr>
+          <tr >
             <th>ToMeet</th>
             <th>Date</th>
             <th>Time</th>
