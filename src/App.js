@@ -10,8 +10,7 @@ import { UpdateAppointment } from "./Components/UpdateAppointment";
 import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 import Error from "./Components/Error";
-
-
+import Createid from "./Components/Createidsearch";
 
 function App() {
   const [create, setCreate] = useState([
@@ -48,33 +47,41 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          
+
           <Route
             path="/Create-Appointment/"
             element={
               <CreateAppointment create={create} setCreate={setCreate} />
             }
           />
-         
           <Route
-            path="/Read-Appointment"
-            element={<ReadAppointment create={create} />}
+            path="/Create-Appointment/:ID"
+            element={<Createid create={create} setCreate={setCreate} />}
           />
 
           <Route
-            path="/Update-Appointment"
+            path="/Read-Appointment/"
+            element={<ReadAppointment create={create} />}
+          />
+          <Route
+            path="/Read-Appointment/:ID"
+            element={<Createid create={create} />}
+          />
+
+          <Route
+            path="/Update-Appointment/"
             element={
               <UpdateAppointment create={create} setCreate={setCreate} />
             }
           />
-          
+
           <Route
-            path="/Delete-Appointment"
+            path="/Delete-Appointment/"
             element={
               <DeleteAppointment create={create} setCreate={setCreate} />
             }
           />
-          
+
           <Route path="/About" element={<About />} />
           <Route path="*" element={<Error />} />
         </Routes>

@@ -1,7 +1,9 @@
+import React from "react";
+import { useParams } from "react-router-dom";
 
+function Createid({ create }) {
+  const { ID } = useParams()
 
-export function ReadAppointment({ create }) {
- 
   return (
     <div className="table-responsive">
       <table className="table">
@@ -14,8 +16,8 @@ export function ReadAppointment({ create }) {
           </tr>
         </thead>
         <tbody>
-          {create.length > 0 ? (
-            create.map((cr, index) => {
+          {create.map((cr, index) => {
+            if (cr.Id === Number(ID)) {
               return (
                 <tr key={index}>
                   <td>{cr.ToMeet}</td>
@@ -24,14 +26,14 @@ export function ReadAppointment({ create }) {
                   <td>{cr.Purpose}</td>
                 </tr>
               );
-            })
-          ) : (
-            <tr className="m-5">
-              <td colSpan={5}>Appointment not available</td>
-            </tr>
-          )}
+            }else{
+                return false
+            }
+          })}
         </tbody>
       </table>
     </div>
   );
 }
+
+export default Createid;
