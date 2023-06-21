@@ -10,7 +10,7 @@ import { UpdateAppointment } from "./Components/UpdateAppointment";
 import Header from "./Components/Header";
 import Navbar from "./Components/Navbar";
 import Error from "./Components/Error";
-import AppointmentId from "./Components/AppointmentId";
+
 
 
 function App() {
@@ -48,20 +48,14 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/Create-Appointment/:id"
-            element={<AppointmentId create={create} />}
-          />
+          
           <Route
             path="/Create-Appointment/"
             element={
               <CreateAppointment create={create} setCreate={setCreate} />
             }
           />
-          <Route
-            path="/Read-Appointment/:id"
-            element={<AppointmentId create={create} />}
-          />
+         
           <Route
             path="/Read-Appointment"
             element={<ReadAppointment create={create} />}
@@ -73,20 +67,14 @@ function App() {
               <UpdateAppointment create={create} setCreate={setCreate} />
             }
           />
-          <Route
-            path="/Update-Appointment/:id"
-            element={<AppointmentId create={create} setCreate={setCreate} />}
-          />
+          
           <Route
             path="/Delete-Appointment"
             element={
               <DeleteAppointment create={create} setCreate={setCreate} />
             }
           />
-          <Route
-            path="/Delete-Appointment/:id"
-            element={<AppointmentId create={create} setCreate={setCreate} />}
-          />
+          
           <Route path="/About" element={<About />} />
           <Route path="*" element={<Error />} />
         </Routes>
