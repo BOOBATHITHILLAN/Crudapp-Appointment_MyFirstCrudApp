@@ -15,7 +15,7 @@ export function CreateAppointment({ create, setCreate }) {
 
   const [default1, setDefault] = useState(false);
 
-  console.log(tomeet)
+ 
 
   // Reset inputs after create-Appointment
   useEffect(() => {
