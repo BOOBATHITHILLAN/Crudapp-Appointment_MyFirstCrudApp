@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 
 // import { useState } from "react";
 export function Home() {
+
+  let ID=1;
+  
   return (
     <div className="bg-primary bg-gradient">
       <div className="p-3">
@@ -12,6 +15,11 @@ export function Home() {
       <div className="p-3">
         <Link className="active btn btn-dark btn-lg" to="/Read-Appointment">
           Read-Appointment
+        </Link>
+      </div>
+      <div className="p-3">
+        <Link className="active btn btn-dark btn-lg" to={`/Read-Appointment/${ID}`}>
+          Read-Appointment-id
         </Link>
       </div>
       <div className="p-3">

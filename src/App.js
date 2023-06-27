@@ -1,4 +1,4 @@
-import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Link, Route, BrowserRouter as Router, Routes, useParams } from "react-router-dom";
 import "./App.css";
 import { Home } from "./Components/Home";
 import { useState } from "react";
@@ -12,23 +12,11 @@ import Navbar from "./Components/Navbar";
 import Error from "./Components/Error";
 import Createid from "./Components/Createidsearch";
 
-function App() {
-  const [create, setCreate] = useState([
-    {
-      Id: 1,
-      ToMeet: "Boobathi",
-      Date: "2023-07-09",
-      Time: "10:00",
-      Purpose: "Medical Checkup",
-    },
-    {
-      Id: 2,
-      ToMeet: "Thillan",
-      Date: "2023-07-20",
-      Time: "11:00",
-      Purpose: "Friends meeting",
-    },
-  ]);
+function App({Data}) {
+
+  const{ID}=useParams();
+  
+  const [create, setCreate] = useState(Data);
 
   return (
     <div className="App container">
@@ -46,19 +34,14 @@ function App() {
         />
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home ID={ID} />} />
 
           <Route
             path="/Create-Appointment/"
             element={
               <CreateAppointment create={create} setCreate={setCreate} />
             }
-          />
-          <Route
-            path="/Create-Appointment/:ID"
-            element={<Createid create={create} setCreate={setCreate} />}
-          />
-
+          />         
           <Route
             path="/Read-Appointment/"
             element={<ReadAppointment create={create} />}
