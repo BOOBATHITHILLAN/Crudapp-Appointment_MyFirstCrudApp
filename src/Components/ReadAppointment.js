@@ -7,6 +7,7 @@ export function ReadAppointment({ create }) {
       <table className="table">
         <thead>
           <tr>
+            <th>Id</th>
             <th>ToMeet</th>
             <th>Date</th>
             <th>Time</th>
@@ -18,6 +19,7 @@ export function ReadAppointment({ create }) {
             create.map((cr, index) => {
               return (
                 <tr key={index}>
+                  <td>{cr.Id}</td>
                   <td>{cr.ToMeet}</td>
                   <td>{cr.Date}</td>
                   <td>{cr.Time}</td>
