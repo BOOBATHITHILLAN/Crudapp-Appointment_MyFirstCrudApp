@@ -17,11 +17,11 @@ export function Home() {
           Read-Appointment
         </Link>
       </div>
-      <div className="p-3">
-        <Link className="active btn btn-dark btn-lg" to={`/Read-Appointment/${ID}`}>
+      
+        <Link  to={`/Read-Appointment/${ID}`} hidden>
           Read-Appointment-id
         </Link>
-      </div>
+      
       <div className="p-3">
         <Link className="active btn btn-dark btn-lg" to="/Update-Appointment">
           Update-Appointment
