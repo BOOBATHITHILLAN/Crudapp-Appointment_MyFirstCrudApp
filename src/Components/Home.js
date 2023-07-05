@@ -6,7 +6,7 @@ export function Home() {
   let ID=1;
   
   return (
-    <div className="bg-primary bg-gradient">
+    <div className="bg-primary bg-opacity-50">
       <div className="p-3">
         <Link className=" active btn btn-dark btn-lg" to="/Create-Appointment">
           Create-Appointment

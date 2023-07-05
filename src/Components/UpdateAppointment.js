@@ -141,22 +141,7 @@ export function UpdateAppointment({ create, setCreate }) {
                   </tr>
                 );
               } else {
-                return (
-                  <tr key={index}>
-                    <td>{cr.ToMeet}</td>
-                    <td>{cr.Date}</td>
-                    <td>{cr.Time}</td>
-                    <td>{cr.Purpose}</td>
-                    <td>
-                      <button
-                        className="btn btn-primary  m-2"
-                        onClick={() => Editapp(cr.Id)}
-                      >
-                        Edit
-                      </button>
-                    </td>
-                  </tr>
-                );
+                return (null);
               }
             })
           )}

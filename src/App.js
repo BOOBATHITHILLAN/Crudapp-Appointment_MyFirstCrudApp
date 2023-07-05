@@ -19,7 +19,7 @@ function App({Data}) {
   const [create, setCreate] = useState(Data);
 
   return (
-    <div className="App container">
+    <div className="App container ">
       <Header text="CRUD APPLICATION" />
 
       <Router>
